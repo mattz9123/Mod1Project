@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul id="tabs" class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#delivery" class="nav-link">Delivery Info</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#orderConfirmation" class="nav-link">Order Confirmation</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!--holder for all tab content areas -->
+        <div class="tab-content">
+            <div id="home" class="tab-pane active">
+                <form id="firstForm">
+                <h2>Choose a pizza size</h2>
+                    <label for="smallPizza">Small</label>
+                    <input type="radio" name="sizeOfPizza" id="smallPizza" data-price="7" data-display="Small" required>
+
+                <br>
+
+                    <label for="mediumPizza">Medium</label>
+                    <input type="radio" name="sizeOfPizza" id="mediumPizza" data-price="9" data-display="Medium">
+
+                <br>
+
+                    <label for="largePizza">Large</label>
+                    <input type="radio" name="sizeOfPizza" id="largePizza" data-price="12" data-display="Large">
+
+                <br>
+
+                <h2>Choose a crust</h2>
+                    <label for="thinCrust">Thin</label>
+                    <input type="radio" name="crustType" id="thinCrust" data-display="thin crust" required>
+
+                <br>
+
+                    <label for="panCrust">Pan</label>
+                    <input type="radio" name="crustType" id="panCrust" data-display="pan crust">
+
+                <br>
+
+                    <label for="gfCrust">Gluten Free</label>
+                    <input type="radio" name="crustType" id="gfCrust" data-display="gluten-free crust">
+
+                <br>
+
+                <h2>Choose meat toppings $1.50 each</h2>
+                    <label for="pepperoni">Pepperoni</label>
+                    <input type="checkbox" name="meatType" id="pepperoni" data-price="1.5" data-display="pepperoni">
+
+                <br>
+
+                    <label for="sausage">Sausage</label>
+                    <input type="checkbox" name="meatType" id="sausage" data-price="1.5" data-display="sausage">
+
+                <br>
+
+                <h2>Choose vegetable toppings $1.00 each</h2>
+                    <label for="mushroom">Mushroom</label>
+                    <input type="checkbox" name="vegetableType" id="mushroom" data-price="1" data-display="mushroom">
+
+                <br>
+
+                    <label for="onion">Onion</label>
+                    <input type="checkbox" name="vegetableType" id="onion" data-price="1" data-display="onion">
+
+                <br>
+
+                    <label for="greenpepper">Green Pepper</label>
+                    <input type="checkbox" name="vegetableType" id="greenpepper" data-price="1" data-display="green pepper">
+
+                    <br>
+
+                    <label for="spinach">Spinach</label>
+                    <input type="checkbox" name="vegetableType" id="spinach" data-price="1" data-display="spinach">
+
+                    <br>
+
+                    <label for="redpepper">Red Pepper</label>
+                    <input type="checkbox" name="vegetableType" id="redpepper" data-price="1" data-display="red pepper">
+
+                    <br>
+                    <br>
+
+                    <button>Order Pizza</button>
+
+                    <br>
+
+                    <p id="order"></p>
+                    <p id="subtotal"></p>
+                </form>
+
+
+                <img src="pizza.jpeg" height="375" width="700" class="pizzaPic"/>
+            </div>
+
+            <div id="delivery" class="tab-pane">
+                <form id="secondForm">
+                    <h2>Delivery Information</h2>
+                    <br>
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" name="fname" required>
+                    <br>
+                    <br>
+                    <label for="street">Street Address</label>
+                    <input type="text" id="street" name="street" required>
+                    <br>
+                    <br>
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" required>
+                    <br>
+                    <br>
+                    <label for="phone">Phone</label>
+                    <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" name="phone"
+                    placeholder="###-###-####" required>
+                    <br>
+                    <br>
+                    <button>Submit</button>
+                </form>
+                <br>
+                <img src="pizza2.jpeg" height="500" width="350" class="pizzaPic"/>
+            </div>
+
+            <div id="orderConfirmation" class="tab-pane">
+                <form id="thirdForm">
+                    <h2>Order Confirmation</h2>
+                    <br>
+                    <div id="finalInfo"></div>
+                    <br>
+                    <br>
+                    <div id="finalOrder"></div>
+                    <br>
+                    <br>
+                    <div id="finalCost"></div>
+                </form>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="code.js"></script>
+</body>
+</html>
